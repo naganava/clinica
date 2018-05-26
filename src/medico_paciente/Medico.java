@@ -1,4 +1,8 @@
-package clinica;
+package medico_paciente;
+
+import pessoa_secretaria.Pessoa;
+import medico_paciente.Paciente;
+import relatorios.Consulta;
 
 /**
  *
@@ -6,9 +10,9 @@ package clinica;
  */
 public class Medico extends Pessoa{
 
-    //Consulta consulta;
-    //Paciente paciente;
-    //RelatorioMedico relatorioMedico;
+    private Consulta consulta;
+    private Paciente paciente;
+    private RelatorioMedico relatorioMedico;
     
     public void Medico(){
         

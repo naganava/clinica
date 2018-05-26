@@ -5,6 +5,9 @@
  */
 package relatorios;
 
+import medico_paciente.Medico;
+import medico_paciente.Paciente;
+
 /**
  *
  * @author teclaserti
