@@ -14,13 +14,7 @@ public class Paciente extends Pessoa{
         
     }
     
-    public Paciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
-        super(nome,endereco,telefone,email);
-        this.dataNacimento = dataNascimento;
-        this.tipoConvenio = tipoConvenio;
-    }
-    
-    public void ExcluirPaciente(){
+    private void ExcluirPaciente(){
         super.nome = " ";
         super.endereco = " ";
         super.email = " ";
@@ -29,7 +23,7 @@ public class Paciente extends Pessoa{
         this.tipoConvenio = " ";
     }
     
-    public void AlterarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
+    private void AlterarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
         super.nome = nome;
         super.endereco = endereco;
         super.email = email;
@@ -38,7 +32,7 @@ public class Paciente extends Pessoa{
         this.tipoConvenio = tipoConvenio;
     }
     
-    public void CadastrarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
+    private void CadastrarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
         super.nome = nome;
         super.endereco = endereco;
         super.email = email;

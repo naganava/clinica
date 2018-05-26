@@ -5,6 +5,9 @@
  */
 package main;
 
+import pessoas.Medico;
+import pessoas.Secretaria;
+
 /**
  *
  * @author teclaserti
@@ -15,7 +18,10 @@ public class Clinica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Medico medico = new Medico();
+        Secretaria secretaria = new Secretaria();
+        
+        
     }
     
 }

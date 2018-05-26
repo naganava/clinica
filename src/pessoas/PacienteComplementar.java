@@ -14,15 +14,15 @@ public class PacienteComplementar extends Paciente {
     private Prontuario prontuario;
     private Paciente paciente;
     
-    public void CadastrarInfoPaciente(){
+    private void CadastrarInfoPaciente(){
         
     }
     
-    public void AlterarInfoPaciente(){
+    private void AlterarInfoPaciente(){
         
     }
     
-    public void ExcluirInfoPaciente(){
+    private void ExcluirInfoPaciente(){
         
     }
 }
