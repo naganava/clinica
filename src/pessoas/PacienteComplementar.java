@@ -12,6 +12,7 @@ public class PacienteComplementar extends Paciente {
     private ArrayList cirurgia;
     private ArrayList alergias;
     private Prontuario prontuario;
+    private Paciente paciente;
     
     public void CadastrarInfoPaciente(){
         
