@@ -11,8 +11,15 @@ public class Pessoa {
     protected String telefone;
     protected String email;
     
-    public void Pessoa(){
+    public Pessoa(){
         
+    }
+
+    public Pessoa(String nome, String endereco, String telefone, String email) {
+        this.email = email;
+        this.endereco = endereco;
+        this.nome = nome;
+        this.telefone = telefone;
     }
     
 }

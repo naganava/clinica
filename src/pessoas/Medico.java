@@ -1,6 +1,7 @@
 package pessoas;
 
 import relatorios.Consulta;
+import relatorios.RelatorioMedico;
 
 /**
  *
