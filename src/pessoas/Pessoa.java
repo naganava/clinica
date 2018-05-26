@@ -1,4 +1,4 @@
-package pessoa_secretaria;
+package pessoas;
 
 /**
  *

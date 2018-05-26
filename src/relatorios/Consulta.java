@@ -5,8 +5,8 @@
  */
 package relatorios;
 
-import medico_paciente.Medico;
-import medico_paciente.Paciente;
+import pessoas.Medico;
+import pessoas.Paciente;
 
 /**
  *

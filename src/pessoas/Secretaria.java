@@ -1,7 +1,5 @@
-package pessoa_secretaria;
+package pessoas;
 
-import medico_paciente.Paciente;
-import pessoa_secretaria.Pessoa;
 import relatorios.Consulta;
 
 /**

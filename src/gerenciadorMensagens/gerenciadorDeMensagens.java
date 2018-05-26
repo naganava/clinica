@@ -5,22 +5,24 @@
  */
 package gerenciadorMensagens;
 
+import pessoas.Paciente;
+
 /**
  *
  * @author teclaserti
  */
 public class gerenciadorDeMensagens {
-    private Paciente paciente;
+    private final Paciente paciente;
     
     public gerenciadorDeMensagens(Paciente paciente){
         this.paciente = paciente;
     }
     
     public String enviarEmail(){
-        return 'Email enviado para o paciente '+ paciente.nome;
+        return "Email enviado para o paciente "+ paciente.getNome();
     }
     
     public String enviarSMS(){
-        return 'SMS enviado para o paciente '+ paciente.nome;
+        return "SMS enviado para o paciente "+ paciente.getNome();
     }
 }
