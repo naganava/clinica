@@ -11,8 +11,9 @@ public class Receita extends RelatorioMedico{
     private Paciente paciente;
     private String receita;
     
-    public void gerarRelatorio(){
-        
+    @Override
+    public String gerarRelatorio(){
+        return "";
     }
     
 }

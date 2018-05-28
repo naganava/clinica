@@ -10,8 +10,9 @@ public class ClientesAtendidos  extends RelatorioMedico{
 
     private ArrayList<String> consulta;
     
-    public void gerarRelatorio(){
-        
+    @Override
+    public String gerarRelatorio(){
+        return "";
     }
     
 }

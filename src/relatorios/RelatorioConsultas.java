@@ -11,8 +11,9 @@ public class RelatorioConsultas extends Relatorio {
     private ArrayList<String> consulta;
     private boolean contato;
     
-    public void gerarRelatorio(){
-        
+    @Override
+    public String gerarRelatorio(){
+        return "";
     }
     
     

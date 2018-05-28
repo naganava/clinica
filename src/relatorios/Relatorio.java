@@ -9,7 +9,7 @@ public class Relatorio {
     protected String dataRelatorio;
     protected String horaRelatorio;
     
-    public void gerarRelatorio(){
-        
+    public String gerarRelatorio(){
+        return "";
     }
 }

@@ -8,6 +8,6 @@ import pessoas.Medico;
  */
 public class RelatorioMedico extends Relatorio{
 
-    private Medico medico;
+    protected Medico medico;
     
 }

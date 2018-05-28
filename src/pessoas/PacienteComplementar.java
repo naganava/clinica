@@ -14,15 +14,15 @@ public class PacienteComplementar extends Paciente {
     private Prontuario prontuario;
     private Paciente paciente;
     
-    private void CadastrarInfoPaciente(){
-        
-    }
-    
-    private void AlterarInfoPaciente(){
-        
-    }
-    
-    private void ExcluirInfoPaciente(){
-        
+    protected void cadastrarPaciente(boolean fuma, boolean bebe, boolean colesterol, boolean diabete,
+            boolean doencaCardiaca, ArrayList<String> cirurgia, ArrayList<String> alergias, Paciente paciente){
+        this.alergias = alergias;
+        this.bebe = bebe;
+        this.cirurgia = cirurgia;
+        this.colesterol = colesterol;
+        this.diabete = diabete;
+        this.doencaCardiaca = doencaCardiaca;
+        this.fuma = fuma;
+        this.paciente = paciente;
     }
 }

@@ -10,8 +10,9 @@ public class DeclaracaoAcompanhamento extends RelatorioMedico{
     
     private Paciente paciente;
     
-    public void gerarRelatorio(){
-        
+    @Override
+    public String gerarRelatorio(){
+        return "";
     }
     
 }
