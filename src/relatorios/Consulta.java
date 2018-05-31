@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package relatorios;
 
 import pessoas.Medico;
@@ -17,17 +12,18 @@ public class Consulta {
     private String horario;
     private Paciente paciente;
     private Medico medico;
-    private char tipoConsulta;
+    private String tipoConsulta;
     
     public Consulta(){
-        
     }
-    
-    private void cadastrarConsulta(String data, String horario, Paciente paciente, Medico medico, char tipoConsulta){
+  
+    public void cadastrarConsulta(String data, String horario, Paciente paciente, Medico medico, String tipoConsulta){
         this.data = data;
         this.horario = horario;
         this.tipoConsulta = tipoConsulta;
         this.paciente = paciente;
         this.medico = medico;
     }
+
+    
 }

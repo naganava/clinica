@@ -6,13 +6,17 @@ import java.util.ArrayList;
  *
  * @author Rafael
  */
-public class ClientesAtendidos  extends RelatorioMedico{
+public class ClientesAtendidos extends RelatorioMedico {
 
     private ArrayList<String> consulta;
-    
-    @Override
-    public String gerarRelatorio(){
-        return "";
+
+    public ClientesAtendidos() {
+
     }
-    
+
+    public String gerarRelatorio() {
+        return "Foram realizadas " + this.consulta + " consulta(s).";
+    }
+
+
 }

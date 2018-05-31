@@ -7,30 +7,28 @@ import pessoas.Paciente;
  *
  * @author Rafael
  */
-public class Atestado extends RelatorioMedico{
+public class Atestado extends RelatorioMedico {
 
- private Paciente paciente;
- private int diasAtestado;
- 
- @Override
- public String gerarRelatorio(){
-     return "Eu, "+super.medico.getNome()+ " declaro que o paciente, "+ paciente.getNome()+
-             " tem direito a "+this.diasAtestado + "dias de atestado";
- }
- 
- public Atestado(){
-     
- }
- 
- public Atestado(Paciente paciente,int diasAtestado){
-     super();
-     this.diasAtestado = diasAtestado;
-     this.paciente = paciente;
- }
+    private Paciente paciente;
+    private int diasAtestado;
+
+    public Atestado() {
+
+    }
+
+    public void atestadoMedico(Paciente paciente, int diasAtestado) {
+        super.medico = medico;
+        this.diasAtestado = diasAtestado;
+        this.paciente = paciente;
+    }
 
     public void setMedico(Medico medico) {
-        super.medico = medico; 
+        super.medico = medico;
     }
- 
- 
+
+    @Override
+    public String gerarRelatorio() {
+        return "Eu, " + super.medico.getNome() + " declaro que o(a) paciente " + paciente.getNome()
+                + " tem direito a " + this.diasAtestado + " dia(s) de atestado.";
+    }
 }
