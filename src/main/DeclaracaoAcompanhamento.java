@@ -9,6 +9,10 @@ package main;
  *
  * @author Rafael
  */
-class receita1 {
+class DeclaracaoAcompanhamento {
+
+    boolean gerarRelatorio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

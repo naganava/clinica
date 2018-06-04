@@ -14,7 +14,8 @@ import relatorios.Atestado;
 import relatorios.ClientesAtendidos;
 import relatorios.Consulta;
 import relatorios.Receita;
-
+import relatorios.Relatorio;
+import relatorios.DeclaracaoAcompanhamento;
 
 /**
  *
@@ -35,18 +36,26 @@ public class Clinica {
         Consulta consulta1 = new Consulta();
         Atestado atestado = new Atestado();
         Receita receita = new Receita();
+        Relatorio relatorio = new Relatorio();
+        DeclaracaoAcompanhamento declaracao = new DeclaracaoAcompanhamento();
+        
         ClientesAtendidos clientesAtendidos = new ClientesAtendidos();
         
         medico1.cadastroMedico("Dr Bonilha", "Avenida Brasil", "44-35427364", "clinicadrbonilha@pr.com");        
         paciente1.cadastrarPaciente("Felipe", "Rua dos bobos", "99-99999999", "felipebobo@email.com", "01/01/90", "UNIMED");        
         consulta1.cadastrarConsulta("31/05/2018", "16:37", paciente1, medico1, "Retorno");
         receita.receitaMedica(paciente1, "Cataflan e Dorflex");
+        relatorio.cadastroRelatorio("04/06/2018", "14:45");
+        declaracao.declaracaoAcompanhante(paciente1);
+        declaracao.setMedico(medico1);
         atestado.atestadoMedico(paciente1, 3);//Quantos dias o paciente1 terá de atestado.
         atestado.setMedico(medico1);
         
         
         System.out.println(atestado.gerarRelatorio());
         System.out.println(receita.gerarRelatorio());
+        System.out.println(relatorio.gerarRelatorio());
+        System.out.println(declaracao.gerarRelatorio());
         System.out.println(clientesAtendidos.gerarRelatorio());
         /*
         System.out.println("Paciente fuma?: ");

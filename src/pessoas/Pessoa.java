@@ -15,7 +15,7 @@ public class Pessoa {
         
     }
 
-    public Pessoa(String nome, String endereco, String telefone, String email) {
+    public void Pessoa(String nome, String endereco, String telefone, String email) {
         this.email = email;
         this.endereco = endereco;
         this.nome = nome;

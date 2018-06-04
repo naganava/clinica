@@ -26,11 +26,13 @@ public class Receita extends RelatorioMedico {
     public void setMedico(Medico medico) {
         super.medico = medico;
     }
-
+    
+    public String getReceita() {
+        return receita;
+    }
 
     public String gerarRelatorio() {
-        return "Eu, " + super.medico.getNome() + " declaro que o(a) paciente " + paciente.getNome()
-                + " obtém os medicamentos " + this.receita + " desta receita médica.";
+        return "Receita médica: "+ this.receita +".";
     }
 
 }
