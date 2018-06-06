@@ -13,6 +13,7 @@ public class Consulta {
     private Paciente paciente;
     private Medico medico;
     private String tipoConsulta;
+    private String tempoConsulta;
     
     public Consulta(){
     }
@@ -23,6 +24,27 @@ public class Consulta {
         this.tipoConsulta = tipoConsulta;
         this.paciente = paciente;
         this.medico = medico;
+        if(tipoConsulta == "Retorno"){
+            tempoConsulta = "00:30";
+        }else{
+            tempoConsulta = "01:00";
+        }
+    }
+    
+    public String getData(){
+        return this.data;
+    }
+    
+    public String getHorario(){
+        return this.horario;
+    }
+    
+    public Paciente getPaciente(){
+        return this.paciente;
+    }
+    
+    public Medico getMedico(){
+        return this.medico;
     }
 
     

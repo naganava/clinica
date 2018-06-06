@@ -6,6 +6,7 @@
 package main;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import pessoas.Medico;
 import pessoas.Paciente;
@@ -16,6 +17,7 @@ import relatorios.Consulta;
 import relatorios.Receita;
 import relatorios.Relatorio;
 import relatorios.DeclaracaoAcompanhamento;
+import relatorios.RelatorioConsultas;
 
 /**
  *
@@ -34,16 +36,36 @@ public class Clinica {
         Paciente paciente1 = new Paciente();
 
         Consulta consulta1 = new Consulta();
+        Consulta consulta2 = new Consulta();
         Atestado atestado = new Atestado();
         Receita receita = new Receita();
         Relatorio relatorio = new Relatorio();
         DeclaracaoAcompanhamento declaracao = new DeclaracaoAcompanhamento();
         
+        RelatorioConsultas relatorioConsultas = new RelatorioConsultas();
+        ArrayList<Consulta> consultas = new ArrayList();
+        
         ClientesAtendidos clientesAtendidos = new ClientesAtendidos();
         
+        
+        //métodos de secretaria
+        secretaria1.cadastrarPaciente(paciente1,"Felipe", "Rua dos bobos", "99-99999999", "felipebobo@email.com", "01/01/90", "UNIMED");        
+        secretaria1.alterarPaciente(paciente1, "Felipe Naganava","","","","","");
+        secretaria1.excluiPaciente(paciente1);
+      
+        secretaria1.cadastrarConsulta(consulta1,"31/05/2018", "16:37", paciente1, medico1, "Retorno");
+        secretaria1.cadastrarConsulta(consulta2,"01/06/2018", "17:37", paciente1, medico1, "Retorno");
+        
+        //Adiciona as consultas no array de Consultas
+        consultas.add(consulta1);
+        consultas.add(consulta2);
+        
+        //Imprime relatório de consultas
+        System.out.print(relatorioConsultas.gerarRelatorio("31/05/2018", consultas, true));
+        
+        
         medico1.cadastroMedico("Dr Bonilha", "Avenida Brasil", "44-35427364", "clinicadrbonilha@pr.com");        
-        paciente1.cadastrarPaciente("Felipe", "Rua dos bobos", "99-99999999", "felipebobo@email.com", "01/01/90", "UNIMED");        
-        consulta1.cadastrarConsulta("31/05/2018", "16:37", paciente1, medico1, "Retorno");
+
         receita.receitaMedica(paciente1, "Cataflan e Dorflex");
         relatorio.cadastroRelatorio("04/06/2018", "14:45");
         declaracao.declaracaoAcompanhante(paciente1);
