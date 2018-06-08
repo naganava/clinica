@@ -46,7 +46,7 @@ public class Medico extends Pessoa{
         paciente.cadastrarProntuario(prontuario);
     }
     
-    public void removerProntuario(Prontuario prontuario,Paciente paciente,ArrayList<String> sintomas, String diagnostico, String prescricao){
+    public void removerProntuario(Prontuario prontuario,Paciente paciente){
         prontuario.removerProntuario();
         paciente.removerProntuario();
     }

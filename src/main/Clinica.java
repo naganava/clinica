@@ -44,6 +44,7 @@ public class Clinica {
         Atestado atestado = new Atestado();
         Receita receita = new Receita();
         Relatorio relatorio = new Relatorio();
+        relatorio.cadastroRelatorio("04/06/2018", "14:45");
         DeclaracaoAcompanhamento declaracao = new DeclaracaoAcompanhamento();
         
         RelatorioConsultas relatorioConsultas = new RelatorioConsultas();
@@ -60,6 +61,9 @@ public class Clinica {
         String dataConsulta;
         String horarioConsulta;
         String tipoConsulta;
+        String receitaMedica;
+        String nomeAcompanhante;
+        int diasAtestado;
         boolean fuma = false;
         boolean bebe = false;
         boolean colesterol = false;
@@ -76,6 +80,7 @@ public class Clinica {
         int opcao2 = -1;
         int opcao3 = -1;
         int opcao4 = -1;
+        int opcao5 = -1;
         
         
         while(opcao != 0){
@@ -112,7 +117,7 @@ public class Clinica {
                                 email = leitor.next();
                                 System.out.println("Data de nascimento: ");
                                 dataNascimento = leitor.next();
-                                System.out.println("Data de nascimento: ");
+                                System.out.println("Plano de Saúde: ");
                                 planoSaude = leitor.next();
                                 secretaria1.cadastrarPaciente(paciente1,nomePaciente, enderecoPaciente, telefone, email, dataNascimento, planoSaude);        
                                 break;
@@ -127,7 +132,7 @@ public class Clinica {
                                 email = leitor.next();
                                 System.out.println("Data de nascimento: ");
                                 dataNascimento = leitor.next();
-                                System.out.println("Data de nascimento: ");
+                                System.out.println("Plano de Saúde: ");
                                 planoSaude = leitor.next();
                                 secretaria1.alterarPaciente(paciente1,nomePaciente, enderecoPaciente, telefone, email, dataNascimento, planoSaude);
                                 break;
@@ -231,10 +236,49 @@ public class Clinica {
                                 medico1.atualizarProntuario(prontuario, paciente1, sintomas, "Gripe", "Benegripe");
                                 break;
                             case 6:
-                                medico1.removerProntuario(prontuario, paciente1, sintomas, "Gripe", "Benegripe");
+                                medico1.removerProntuario(prontuario, paciente1);
                                 break;
                             case 7:
-                                
+                                while(opcao5 != 0){
+                                    System.out.println("*****RELATÓRIOS MÉDICOS*****");
+                                    System.out.println("1. Receita");
+                                    System.out.println("2. Atestado");
+                                    System.out.println("3. Declaração de acompanhamento");
+                                    System.out.println("4. Clientes atendidos no mês");
+                                    System.out.println("0. Voltar");
+                                    opcao5 = leitor.nextInt();
+                                    
+                                    switch (opcao5) {
+                                        case 1:
+                                            System.out.println("Escreva a receita médica: ");
+                                            receitaMedica = leitor.next();
+                                            receita.receitaMedica(paciente1, receitaMedica);
+                                            System.out.println(receita.gerarRelatorio());
+                                            break;
+                                        case 2:
+                                            System.out.println("Dias de atestado: ");
+                                            diasAtestado = leitor.nextInt();
+                                            atestado.setMedico(medico1);
+                                            atestado.atestadoMedico(paciente1, 3);
+                                            System.out.println(atestado.gerarRelatorio());
+                                            break;
+                                        case 3:
+                                            System.out.println("Nome do acompanhante: ");
+                                            nomeAcompanhante = leitor.next();
+                                            declaracao.declaracaoAcompanhante(paciente1);
+                                            declaracao.setMedico(medico1);
+                                            System.out.println(declaracao.gerarRelatorio(nomeAcompanhante));
+                                            break;
+                                        case 4:
+                                            System.out.println(clientesAtendidos.gerarRelatorio(consultas));
+                                            break;
+                                        case 0:
+                                            break;
+                                        default:
+                                            System.out.println("Opção inválida");
+                                            break;
+                                    }
+                                }
                                 break;
                             case 0:
                                 break;
@@ -274,24 +318,6 @@ public class Clinica {
                     break;
             }
         }
-        
-        receita.receitaMedica(paciente1, "Cataflan e Dorflex");
-        relatorio.cadastroRelatorio("04/06/2018", "14:45");
-        declaracao.declaracaoAcompanhante(paciente1);
-        declaracao.setMedico(medico1);
-        atestado.atestadoMedico(paciente1, 3);//Quantos dias o paciente1 terá de atestado.
-        atestado.setMedico(medico1);
-        
-        
-        System.out.println(atestado.gerarRelatorio());
-        System.out.println(receita.gerarRelatorio());
-        System.out.println(relatorio.gerarRelatorio());
-        System.out.println(declaracao.gerarRelatorio());
-        System.out.println(clientesAtendidos.gerarRelatorio());
-        /*
-        
-         */
-
     }
 
 }

@@ -22,10 +22,9 @@ public class DeclaracaoAcompanhamento extends RelatorioMedico {
         super.medico = medico;
     }
 
-    @Override
-    public String gerarRelatorio() {
+    public String gerarRelatorio(String acompanhante) {
         return "Eu, " + super.medico.getNome() + " declaro que o(a) " + paciente.getNome() 
-                + " paciente está acompanhado. ";
+                + " paciente está acompanhado de " +acompanhante+". ";
     }
 
 }
