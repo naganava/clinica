@@ -11,18 +11,13 @@ import pessoas.Paciente;
  *
  * @author teclaserti
  */
-public class gerenciadorDeMensagens {
-    private final Paciente paciente;
+public class GerenciadorDeMensagens {
     
-    public gerenciadorDeMensagens(Paciente paciente){
-        this.paciente = paciente;
-    }
-    
-    public String enviarEmail(){
+    public String enviarEmail(Paciente paciente){
         return "Email enviado para o paciente "+ paciente.getNome();
     }
     
-    public String enviarSMS(){
+    public String enviarSMS(Paciente paciente){
         return "SMS enviado para o paciente "+ paciente.getNome();
     }
 }

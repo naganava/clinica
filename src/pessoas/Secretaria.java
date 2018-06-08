@@ -32,4 +32,13 @@ public class Secretaria extends Pessoa{
         consulta.cadastrarConsulta(data, horario, paciente, medico, tipoConsulta);
     }
     
+    public void alterarConsulta(Consulta consulta, String data, String horario, Paciente paciente, Medico medico, String tipoConsulta) {
+        consulta.alterarConsulta(data, horario, paciente, medico, tipoConsulta);
+    }
+    
+    public void excluirConsulta(Consulta consulta) {
+        consulta.excluirConsulta();
+    }
+    
+    
 }

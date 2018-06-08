@@ -31,6 +31,28 @@ public class Consulta {
         }
     }
     
+    public void alterarConsulta(String data, String horario, Paciente paciente, Medico medico, String tipoConsulta){
+        this.data = data;
+        this.horario = horario;
+        this.tipoConsulta = tipoConsulta;
+        this.paciente = paciente;
+        this.medico = medico;
+        if(tipoConsulta == "Retorno"){
+            tempoConsulta = "00:30";
+        }else{
+            tempoConsulta = "01:00";
+        }
+    }
+    
+    public void excluirConsulta(){
+        this.data = "";
+        this.horario = "";
+        this.tipoConsulta = "";
+        this.paciente = new Paciente();
+        this.medico = new Medico();
+        this.tempoConsulta = "";
+    }
+    
     public String getData(){
         return this.data;
     }

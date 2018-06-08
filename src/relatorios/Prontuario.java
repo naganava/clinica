@@ -16,7 +16,7 @@ public class Prontuario {
     private String diagnostico;
     private String prescricao;
     
-    private Prontuario(){
+    public Prontuario(){
         
     }
     
