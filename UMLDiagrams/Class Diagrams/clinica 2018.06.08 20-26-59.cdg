@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="clinica">
+  <ClassDiagramComponents>
+    <Class name="GerenciadorDeMensagens" package="gerenciadorMensagens" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="enviarEmail" returnType="String" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+        <Method name="enviarSMS" returnType="String" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Secretaria" package="pessoas" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="consulta" type="Consulta" visibility="private"/>
+        <Field name="relatorioConsultas" type="RelatorioConsultas" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Secretaria" returnType="void" visibility="public"/>
+        <Method name="cadastrarPaciente" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="dataNascimento"/>
+          <Argument type="String" name="tipoConvenio"/>
+        </Method>
+        <Method name="alterarPaciente" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="dataNascimento"/>
+          <Argument type="String" name="tipoConvenio"/>
+        </Method>
+        <Method name="excluiPaciente" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+        <Method name="cadastrarConsulta" returnType="void" visibility="public">
+          <Argument type="Consulta" name="consulta"/>
+          <Argument type="String" name="data"/>
+          <Argument type="String" name="horario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Medico" name="medico"/>
+          <Argument type="String" name="tipoConsulta"/>
+        </Method>
+        <Method name="alterarConsulta" returnType="void" visibility="public">
+          <Argument type="Consulta" name="consulta"/>
+          <Argument type="String" name="data"/>
+          <Argument type="String" name="horario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Medico" name="medico"/>
+          <Argument type="String" name="tipoConsulta"/>
+        </Method>
+        <Method name="excluirConsulta" returnType="void" visibility="public">
+          <Argument type="Consulta" name="consulta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pessoa" package="pessoas" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="protected"/>
+        <Field name="endereco" type="String" visibility="protected"/>
+        <Field name="telefone" type="String" visibility="protected"/>
+        <Field name="email" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Pessoa" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Medico" package="pessoas" visibility="public" xPosition="320.0" yPosition="36.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Medico" returnType="void" visibility="public"/>
+        <Method name="cadastroMedico" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="cadastrarDadosComplementares" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="boolean" name="fuma"/>
+          <Argument type="boolean" name="bebe"/>
+          <Argument type="boolean" name="colesterol"/>
+          <Argument type="boolean" name="diabete"/>
+          <Argument type="boolean" name="doencaCardiaca"/>
+          <Argument type="ArrayList&lt;String&gt;" name="cirurgia"/>
+          <Argument type="ArrayList&lt;String&gt;" name="alergias"/>
+        </Method>
+        <Method name="alterarDadosComplementares" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="boolean" name="fuma"/>
+          <Argument type="boolean" name="bebe"/>
+          <Argument type="boolean" name="colesterol"/>
+          <Argument type="boolean" name="diabete"/>
+          <Argument type="boolean" name="doencaCardiaca"/>
+          <Argument type="ArrayList&lt;String&gt;" name="cirurgia"/>
+          <Argument type="ArrayList&lt;String&gt;" name="alergias"/>
+        </Method>
+        <Method name="excluirDadosComplementares" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+        <Method name="cadastrarProntuario" returnType="void" visibility="public">
+          <Argument type="Prontuario" name="prontuario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="ArrayList&lt;String&gt;" name="sintomas"/>
+          <Argument type="String" name="diagnostico"/>
+          <Argument type="String" name="prescricao"/>
+        </Method>
+        <Method name="atualizarProntuario" returnType="void" visibility="public">
+          <Argument type="Prontuario" name="prontuario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="ArrayList&lt;String&gt;" name="sintomas"/>
+          <Argument type="String" name="diagnostico"/>
+          <Argument type="String" name="prescricao"/>
+        </Method>
+        <Method name="removerProntuario" returnType="void" visibility="public">
+          <Argument type="Prontuario" name="prontuario"/>
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Paciente" package="pessoas" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="dataNacimento" type="String" visibility="protected"/>
+        <Field name="tipoConvenio" type="String" visibility="protected"/>
+        <Field name="fuma" type="boolean" visibility="private"/>
+        <Field name="bebe" type="boolean" visibility="private"/>
+        <Field name="colesterol" type="boolean" visibility="private"/>
+        <Field name="diabete" type="boolean" visibility="private"/>
+        <Field name="doencaCardiaca" type="boolean" visibility="private"/>
+        <Field name="cirurgia" type="ArrayList" visibility="private"/>
+        <Field name="alergias" type="ArrayList" visibility="private"/>
+        <Field name="prontuario" type="Prontuario" visibility="private"/>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="excluirPaciente" returnType="void" visibility="protected"/>
+        <Method name="alterarPaciente" returnType="void" visibility="protected">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="dataNascimento"/>
+          <Argument type="String" name="tipoConvenio"/>
+        </Method>
+        <Method name="cadastrarPaciente" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+          <Argument type="String" name="endereco"/>
+          <Argument type="String" name="telefone"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="dataNascimento"/>
+          <Argument type="String" name="tipoConvenio"/>
+        </Method>
+        <Method name="cadastrarComplementos" returnType="void" visibility="public">
+          <Argument type="boolean" name="fuma"/>
+          <Argument type="boolean" name="bebe"/>
+          <Argument type="boolean" name="colesterol"/>
+          <Argument type="boolean" name="diabete"/>
+          <Argument type="boolean" name="doencaCardiaca"/>
+          <Argument type="ArrayList&lt;String&gt;" name="cirurgia"/>
+          <Argument type="ArrayList&lt;String&gt;" name="alergias"/>
+        </Method>
+        <Method name="alterarComplementos" returnType="void" visibility="public">
+          <Argument type="boolean" name="fuma"/>
+          <Argument type="boolean" name="bebe"/>
+          <Argument type="boolean" name="colesterol"/>
+          <Argument type="boolean" name="diabete"/>
+          <Argument type="boolean" name="doencaCardiaca"/>
+          <Argument type="ArrayList&lt;String&gt;" name="cirurgia"/>
+          <Argument type="ArrayList&lt;String&gt;" name="alergias"/>
+        </Method>
+        <Method name="excluirComplementos" returnType="void" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="cadastrarProntuario" returnType="void" visibility="public">
+          <Argument type="Prontuario" name="prontuario"/>
+        </Method>
+        <Method name="removerProntuario" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="RelatorioConsultas" package="relatorios" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="gerarRelatorio" returnType="String" visibility="public">
+          <Argument type="String" name="dataRelatorio"/>
+          <Argument type="ArrayList&lt;Consulta&gt;" name="consultas"/>
+          <Argument type="boolean" name="contato"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Receita" package="relatorios" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="paciente" type="Paciente" visibility="protected"/>
+        <Field name="receita" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="receitaMedica" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="String" name="receita"/>
+        </Method>
+        <Method name="setMedico" returnType="void" visibility="public">
+          <Argument type="Medico" name="medico"/>
+        </Method>
+        <Method name="getReceita" returnType="String" visibility="public"/>
+        <Method name="gerarRelatorio" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ClientesAtendidos" package="relatorios" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="gerarRelatorio" returnType="String" visibility="public">
+          <Argument type="ArrayList&lt;Consulta&gt;" name="consulta"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Relatorio" package="relatorios" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="dataRelatorio" type="String" visibility="protected"/>
+        <Field name="horaRelatorio" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cadastroRelatorio" returnType="void" visibility="public">
+          <Argument type="String" name="dataRelatorio"/>
+          <Argument type="String" name="horaRelatorio"/>
+        </Method>
+        <Method name="gerarRelatorio" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DeclaracaoAcompanhamento" package="relatorios" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="declaracaoAcompanhante" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+        </Method>
+        <Method name="setMedico" returnType="void" visibility="public">
+          <Argument type="Medico" name="medico"/>
+        </Method>
+        <Method name="gerarRelatorio" returnType="String" visibility="public">
+          <Argument type="String" name="acompanhante"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Consulta" package="relatorios" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="data" type="String" visibility="private"/>
+        <Field name="horario" type="String" visibility="private"/>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+        <Field name="medico" type="Medico" visibility="private"/>
+        <Field name="tipoConsulta" type="String" visibility="private"/>
+        <Field name="tempoConsulta" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cadastrarConsulta" returnType="void" visibility="public">
+          <Argument type="String" name="data"/>
+          <Argument type="String" name="horario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Medico" name="medico"/>
+          <Argument type="String" name="tipoConsulta"/>
+        </Method>
+        <Method name="alterarConsulta" returnType="void" visibility="public">
+          <Argument type="String" name="data"/>
+          <Argument type="String" name="horario"/>
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="Medico" name="medico"/>
+          <Argument type="String" name="tipoConsulta"/>
+        </Method>
+        <Method name="excluirConsulta" returnType="void" visibility="public"/>
+        <Method name="getData" returnType="String" visibility="public"/>
+        <Method name="getHorario" returnType="String" visibility="public"/>
+        <Method name="getPaciente" returnType="Paciente" visibility="public"/>
+        <Method name="getMedico" returnType="Medico" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Atestado" package="relatorios" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="paciente" type="Paciente" visibility="private"/>
+        <Field name="diasAtestado" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="atestadoMedico" returnType="void" visibility="public">
+          <Argument type="Paciente" name="paciente"/>
+          <Argument type="int" name="diasAtestado"/>
+        </Method>
+        <Method name="setMedico" returnType="void" visibility="public">
+          <Argument type="Medico" name="medico"/>
+        </Method>
+        <Method name="gerarRelatorio" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RelatorioMedico" package="relatorios" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="medico" type="Medico" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Prontuario" package="relatorios" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="sintomas" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="diagnostico" type="String" visibility="private"/>
+        <Field name="prescricao" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cadastrarProntuario" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="sintomas"/>
+          <Argument type="String" name="diagnostico"/>
+          <Argument type="String" name="prescricao"/>
+        </Method>
+        <Method name="atualizarProntuario" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="sintomas"/>
+          <Argument type="String" name="diagnostico"/>
+          <Argument type="String" name="prescricao"/>
+        </Method>
+        <Method name="removerProntuario" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Clinica" package="main" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="pessoas.Medico" target="relatorios.Prontuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="consulta" source="pessoas.Secretaria" target="relatorios.Consulta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.Receita" target="pessoas.Medico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paciente" source="pessoas.Paciente" target="pessoas.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paciente" source="relatorios.Consulta" target="pessoas.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.Consulta" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pessoas.Paciente" target="relatorios.Prontuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pessoas.Medico" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.DeclaracaoAcompanhamento" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pessoas.Medico" target="pessoas.Pessoa"/>
+    <UseRelation source="relatorios.ClientesAtendidos" target="relatorios.Consulta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="medico" source="relatorios.Consulta" target="pessoas.Medico" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.Atestado" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.RelatorioConsultas" target="relatorios.Consulta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pessoas.Secretaria" target="relatorios.Consulta" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="relatorioConsultas" source="pessoas.Secretaria" target="relatorios.RelatorioConsultas" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="prontuario" source="pessoas.Paciente" target="relatorios.Prontuario" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pessoas.Paciente" target="pessoas.Pessoa"/>
+    <UseRelation source="relatorios.Atestado" target="pessoas.Medico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="pessoas.Secretaria" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="relatorios.DeclaracaoAcompanhamento" target="pessoas.Medico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="relatorios.DeclaracaoAcompanhamento" target="relatorios.RelatorioMedico"/>
+    <UseRelation source="relatorios.Consulta" target="pessoas.Medico" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="relatorios.Receita" target="relatorios.RelatorioMedico"/>
+    <HasRelation name="paciente" source="relatorios.Receita" target="pessoas.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="pessoas.Secretaria" target="pessoas.Pessoa"/>
+    <UseRelation source="relatorios.Receita" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="relatorios.Atestado" target="relatorios.RelatorioMedico"/>
+    <IsRelation name="is" source="relatorios.ClientesAtendidos" target="relatorios.RelatorioMedico"/>
+    <HasRelation name="paciente" source="relatorios.DeclaracaoAcompanhamento" target="pessoas.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="medico" source="relatorios.RelatorioMedico" target="pessoas.Medico" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="relatorios.RelatorioMedico" target="relatorios.Relatorio"/>
+    <IsRelation name="is" source="relatorios.RelatorioConsultas" target="relatorios.Relatorio"/>
+    <HasRelation name="paciente" source="relatorios.Atestado" target="pessoas.Paciente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="gerenciadorMensagens.GerenciadorDeMensagens" target="pessoas.Paciente" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

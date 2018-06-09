@@ -11,34 +11,38 @@ public class Secretaria extends Pessoa{
 
     private Consulta consulta;
     private RelatorioConsultas relatorioConsultas;
+    private Paciente paciente;
 
     public void Secretaria(){
         
     }
     
-    public void cadastrarPaciente(Paciente paciente, String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
-        paciente.cadastrarPaciente("Felipe", "Rua dos bobos", "99-99999999", "felipebobo@email.com", "01/01/90", "UNIMED");
+    public Paciente cadastrarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
+        this.paciente = new Paciente(nome, endereco, telefone, email, dataNascimento, tipoConvenio);
+        return paciente;
     }
     
-    public void alterarPaciente(Paciente paciente, String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
-        paciente.alterarPaciente(nome, endereco, telefone, email, dataNascimento, tipoConvenio);
+    public Paciente alterarPaciente(Paciente paciente, String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
+        paciente = new Paciente(nome, endereco, telefone, email, dataNascimento, tipoConvenio);
+        return paciente;
     }
 
     public void excluiPaciente(Paciente paciente) {
-        paciente.excluirPaciente();
+        //procura pelo paciente no array e exclui
     }
 
-    public void cadastrarConsulta(Consulta consulta, String data, String horario, Paciente paciente, Medico medico, String tipoConsulta) {
-        consulta.cadastrarConsulta(data, horario, paciente, medico, tipoConsulta);
+    public Consulta cadastrarConsulta(String data, String horario, String tipoConsulta, Paciente paciente, Medico medico) {
+        consulta = new Consulta(data, horario, tipoConsulta, paciente, medico);
+        paciente.setConsulta(consulta);
+        medico.adicionarConsulta(consulta);
+        return consulta;
     }
     
-    public void alterarConsulta(Consulta consulta, String data, String horario, Paciente paciente, Medico medico, String tipoConsulta) {
-        consulta.alterarConsulta(data, horario, paciente, medico, tipoConsulta);
+    public Consulta alterarConsulta(String data, String horario, String tipoConsulta, Paciente paciente, Medico medico) {
+        consulta = new Consulta(data, horario, tipoConsulta, paciente, medico);
+        paciente.setConsulta(consulta);
+        medico.adicionarConsulta(consulta);
+        return consulta;
     }
-    
-    public void excluirConsulta(Consulta consulta) {
-        consulta.excluirConsulta();
-    }
-    
     
 }

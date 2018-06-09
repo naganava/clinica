@@ -1,7 +1,10 @@
 package pessoas;
 
 import java.util.ArrayList;
+import relatorios.Atestado;
+import relatorios.Consulta;
 import relatorios.Prontuario;
+import relatorios.Receita;
 
 
 /**
@@ -20,43 +23,15 @@ public class Paciente extends Pessoa{
     private ArrayList cirurgia;
     private ArrayList alergias;
     private Prontuario prontuario;
-    private Paciente paciente;
+    private Atestado atestado;
+    private Receita receita;
+    private Consulta consulta;
     
     public Paciente(){
         
     }
     
-    protected void excluirPaciente(){
-        super.nome = " ";
-        super.endereco = " ";
-        super.email = " ";
-        super.telefone = " ";
-        this.dataNacimento = " ";
-        this.tipoConvenio = " ";
-    }
-    
-    protected void alterarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
-        if(nome !=""){
-            super.nome = nome;
-        }
-        if(endereco != ""){
-            super.endereco = endereco;
-        }
-        if(email != ""){
-            super.email = email;
-        }
-        if(telefone != ""){
-            super.telefone = telefone;
-        }
-        if(dataNascimento != ""){
-            this.dataNacimento = dataNascimento;
-        }
-        if(tipoConvenio != ""){
-            this.tipoConvenio = tipoConvenio;
-        }
-    }
-    
-    public void cadastrarPaciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
+    public Paciente(String nome, String endereco, String telefone, String email, String dataNascimento, String tipoConvenio){
         super.nome = nome;
         super.endereco = endereco;
         super.email = email;
@@ -64,49 +39,101 @@ public class Paciente extends Pessoa{
         this.dataNacimento = dataNascimento;
         this.tipoConvenio = tipoConvenio;
     }
-    
-    public void cadastrarComplementos(boolean fuma, boolean bebe, boolean colesterol, boolean diabete,
-            boolean doencaCardiaca, ArrayList<String> cirurgia, ArrayList<String> alergias){
-        this.alergias = alergias;
-        this.bebe = bebe;
-        this.cirurgia = cirurgia;
-        this.colesterol = colesterol;
-        this.diabete = diabete;
-        this.doencaCardiaca = doencaCardiaca;
-        this.fuma = fuma;
-    }
-    
-    public void alterarComplementos(boolean fuma, boolean bebe, boolean colesterol, boolean diabete,
-            boolean doencaCardiaca, ArrayList<String> cirurgia, ArrayList<String> alergias){
-        this.alergias = alergias;
-        this.bebe = bebe;
-        this.cirurgia = cirurgia;
-        this.colesterol = colesterol;
-        this.diabete = diabete;
-        this.doencaCardiaca = doencaCardiaca;
-        this.fuma = fuma;
-    }
-    
-    public void excluirComplementos(){
-        this.alergias = new ArrayList();
-        this.bebe = false;
-        this.cirurgia = new ArrayList();
-        this.colesterol = false;
-        this.diabete = false;
-        this.doencaCardiaca = false;
-        this.fuma = false;
+
+    public String getDataNacimento() {
+        return dataNacimento;
     }
 
-    public String getNome() {
-        return super.nome;
+    public String getTipoConvenio() {
+        return tipoConvenio;
     }
 
-    public void cadastrarProntuario(Prontuario prontuario) {
+    public boolean isFuma() {
+        return fuma;
+    }
+
+    public boolean isBebe() {
+        return bebe;
+    }
+
+    public boolean isColesterol() {
+        return colesterol;
+    }
+
+    public boolean isDiabete() {
+        return diabete;
+    }
+
+    public boolean isDoencaCardiaca() {
+        return doencaCardiaca;
+    }
+
+    public ArrayList getCirurgia() {
+        return cirurgia;
+    }
+
+    public ArrayList getAlergias() {
+        return alergias;
+    }
+
+    public Prontuario getProntuario() {
+        return prontuario;
+    }
+
+    public Atestado getAtestado() {
+        return atestado;
+    }
+
+    public Receita getReceita() {
+        return receita;
+    }
+
+    protected void setFuma(boolean fuma) {
+        this.fuma = fuma;
+    }
+
+    protected void setBebe(boolean bebe) {
+        this.bebe = bebe;
+    }
+
+    protected void setColesterol(boolean colesterol) {
+        this.colesterol = colesterol;
+    }
+
+    protected void setDiabete(boolean diabete) {
+        this.diabete = diabete;
+    }
+
+    protected void setDoencaCardiaca(boolean doencaCardiaca) {
+        this.doencaCardiaca = doencaCardiaca;
+    }
+
+    protected void setCirurgia(ArrayList cirurgia) {
+        this.cirurgia = cirurgia;
+    }
+
+    protected void setAlergias(ArrayList alergias) {
+        this.alergias = alergias;
+    }
+
+    public void setProntuario(Prontuario prontuario) {
         this.prontuario = prontuario;
     }
 
-    void removerProntuario() {
-        this.prontuario = new Prontuario();
+    public void setAtestado(Atestado atestado) {
+        this.atestado = atestado;
     }
+
+    public void setReceita(Receita receita) {
+        this.receita = receita;
+    }
+    
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
+    }
+    
+    
+    
+    
     
 }
