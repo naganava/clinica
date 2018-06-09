@@ -65,6 +65,9 @@ public class Clinica {
         String tipoConsulta;
         String receitaMedica;
         String nomeAcompanhante;
+        String diagnostico;
+        String prescricao;
+        String texto = "";
         int diasAtestado;
         boolean fuma = false;
         boolean bebe = false;
@@ -109,54 +112,59 @@ public class Clinica {
                         
                         switch (opcao2) {
                             case 1:
+                                leitor.nextLine();
                                 System.out.println("Nome do paciente: ");
-                                nomePaciente = leitor.next();
+                                nomePaciente = leitor.nextLine();
                                 System.out.println("Endereco do paciente: ");
-                                enderecoPaciente = leitor.next();
+                                enderecoPaciente = leitor.nextLine();
                                 System.out.println("Telefone: ");
-                                telefone = leitor.next();
+                                telefone = leitor.nextLine();
                                 System.out.println("Email: ");
-                                email = leitor.next();
+                                email = leitor.nextLine();
                                 System.out.println("Data de nascimento: ");
-                                dataNascimento = leitor.next();
+                                dataNascimento = leitor.nextLine();
                                 System.out.println("Plano de Saúde: ");
-                                planoSaude = leitor.next();
+                                planoSaude = leitor.nextLine();
                                 paciente1 = secretaria1.cadastrarPaciente(nomePaciente, enderecoPaciente, telefone, email, dataNascimento, planoSaude);
                                 pacientes.add(paciente1);
                                 break;
                             case 2:
+                                leitor.nextLine();
                                 int i = selecionaPaciente(pacientes);                                
                                 paciente1 = pacientes.get(i);
                                 System.out.println("Nome do paciente: ");
-                                nomePaciente = leitor.next();
+                                nomePaciente = leitor.nextLine();
                                 System.out.println("Endereco do paciente: ");
-                                enderecoPaciente = leitor.next();
+                                enderecoPaciente = leitor.nextLine();
                                 System.out.println("Telefone: ");
-                                telefone = leitor.next();
+                                telefone = leitor.nextLine();
                                 System.out.println("Email: ");
-                                email = leitor.next();
+                                email = leitor.nextLine();
                                 System.out.println("Data de nascimento: ");
-                                dataNascimento = leitor.next();
+                                dataNascimento = leitor.nextLine();
                                 System.out.println("Plano de Saúde: ");
-                                planoSaude = leitor.next();
+                                planoSaude = leitor.nextLine();
                                 paciente1 = secretaria1.alterarPaciente(paciente1,nomePaciente, enderecoPaciente, telefone, email, dataNascimento, planoSaude);
                                 pacientes.set(i, paciente1);
                                 System.out.println("Cliente alterado");
                                 break;
                             case 3:
+                                leitor.nextLine();
                                 i = selecionaPaciente(pacientes); 
                                 pacientes.remove(i);
                                 System.out.println("Paciente excluido");
                                 break;
                             case 4:
+                                leitor.nextLine();
                                 System.out.println("Data da consulta: ");
-                                dataConsulta = leitor.next();
+                                dataConsulta = leitor.nextLine();
                                 System.out.println("Horario da consulta: ");
-                                horarioConsulta = leitor.next();
+                                horarioConsulta = leitor.nextLine();
                                 System.out.println("Tipo da consulta: ");
-                                tipoConsulta = leitor.next(); 
+                                tipoConsulta = leitor.nextLine(); 
                                 i = selecionaPaciente(pacientes);
                                 paciente1 = pacientes.get(i);
+                                i = 0;
                                 System.out.println("Selecione um médico");
                                 for (Iterator iterator = medicos.iterator(); iterator.hasNext(); i++) {
                                     medico1 = (Medico) iterator.next();
@@ -169,14 +177,16 @@ public class Clinica {
                                 System.out.println("Consulta adicionada");
                                 break;
                             case 5:
+                                leitor.nextLine();
                                 System.out.println("Data da consulta: ");
-                                dataConsulta = leitor.next();
+                                dataConsulta = leitor.nextLine();
                                 System.out.println("Horario da consulta: ");
-                                horarioConsulta = leitor.next();
+                                horarioConsulta = leitor.nextLine();
                                 System.out.println("Tipo da consulta: ");
-                                tipoConsulta = leitor.next();
+                                tipoConsulta = leitor.nextLine();
                                 i = selecionaPaciente(pacientes);
                                 paciente1 = pacientes.get(i);
+                                i = 0;
                                 System.out.println("Selecione um médico");
                                 for (Iterator iterator = medicos.iterator(); iterator.hasNext(); i++) {
                                     medico1 = (Medico) iterator.next();
@@ -184,11 +194,19 @@ public class Clinica {
                                 }
                                 i = leitor.nextInt();
                                 medico1 = medicos.get(i);
+                                i = 0;
+                                System.out.println("Selecione uma consulta");
+                                for (Iterator iterator = consultas.iterator(); iterator.hasNext(); i++) {
+                                    consulta1 = (Consulta) iterator.next();
+                                    System.out.println(i+". " +consulta1.getData()+" - "+consulta1.getHorario()+ " - "+ consulta1.getPaciente().getNome());
+                                }
+                                i = leitor.nextInt();
                                 consulta1 = secretaria1.alterarConsulta(dataConsulta,horarioConsulta,tipoConsulta, paciente1, medico1);
                                 consultas.set(i, consulta1);
                                 System.out.println("Consulta alterada");
                                 break;
                             case 6:
+                                leitor.nextLine();
                                 i = 0;
                                 System.out.println("Selecione uma consulta");
                                 for (Iterator iterator = consultas.iterator(); iterator.hasNext(); i++) {
@@ -200,9 +218,10 @@ public class Clinica {
                                 System.out.println("Consulta excluida");
                                 break;
                             case 7:
+                                leitor.nextLine();
                                 System.out.println("Data da consulta: ");
-                                dataConsulta = leitor.next();
-                                System.out.print(relatorioConsultas.gerarRelatorio(dataConsulta, consultas, true));
+                                dataConsulta = leitor.nextLine();
+                                System.out.println(relatorioConsultas.gerarRelatorio(dataConsulta, consultas, true));
                                 break;
                             case 0:
                                 break;
@@ -227,6 +246,7 @@ public class Clinica {
                         
                         switch (opcao3) {
                             case 1: 
+                                leitor.nextLine();
                                 int i = selecionaPaciente(pacientes);
                                 paciente1 = pacientes.get(i);
                                 System.out.println("Paciente fuma?: ");
@@ -239,15 +259,30 @@ public class Clinica {
                                 diabete = leitor.nextBoolean();
                                 System.out.println("Paciente tem doenças cardiacas?: ");
                                 doencaCardiaca = leitor.nextBoolean();
-
+                                leitor.nextLine();
                                 cirurgia = new ArrayList();
-                                
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Cirurgia (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        cirurgia.add(texto);
+                                    }
+                                }
                                 alergias = new ArrayList();
-
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Alergias (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        alergias.add(texto);
+                                    }
+                                }
                                 paciente1 = medico1.cadastrarDadosComplementares(paciente1, fuma, bebe, colesterol, diabete, doencaCardiaca, cirurgia, alergias);
                                 pacientes.set(i, paciente1);
                                 break;                             
                             case 2:
+                                leitor.nextLine();
                                 i = selecionaPaciente(pacientes);
                                 paciente1 = pacientes.get(i);
                                 System.out.println("Paciente fuma?: ");
@@ -260,30 +295,82 @@ public class Clinica {
                                 diabete = leitor.nextBoolean();
                                 System.out.println("Paciente tem doenças cardiacas?: ");
                                 doencaCardiaca = leitor.nextBoolean();
-                                
-                                //Fazer um loop para preencher esses dados;
+                                leitor.nextLine();
                                 cirurgia = new ArrayList();
-
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Cirurgia (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        cirurgia.add(texto);
+                                    }
+                                }
                                 alergias = new ArrayList();
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Alergias (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        alergias.add(texto);
+                                    }
+                                }
 
                                 paciente1 = medico1.alterarDadosComplementares(paciente1, fuma, bebe, colesterol, diabete, doencaCardiaca, cirurgia, alergias);
                                 pacientes.set(i, paciente1);
                                 break;
                             case 3:
+                                leitor.nextLine();
                                 i = selecionaPaciente(pacientes);
+                                paciente1 = pacientes.get(i);
                                 paciente1 = medico1.excluirDadosComplementares(paciente1);
                                 pacientes.set(i, paciente1);
                                 break;
                             case 4:
-                                medico1.cadastrarProntuario(prontuario, paciente1, sintomas, "Gripe", "Benegripe");
+                                leitor.nextLine();
+                                i = selecionaPaciente(pacientes);
+                                paciente1 = pacientes.get(i);
+                                sintomas = new ArrayList();
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Sintomas (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        sintomas.add(texto);
+                                    }
+                                }
+                                System.out.println("Diagnostico: ");
+                                diagnostico = leitor.nextLine();
+                                System.out.println("Prescricao: ");
+                                prescricao = leitor.nextLine();
+                                medico1.cadastrarProntuario(paciente1, sintomas, diagnostico, prescricao);
                                 break;
                             case 5:
-                                medico1.atualizarProntuario(prontuario, paciente1, sintomas, "Gripe", "Benegripe");
+                                leitor.nextLine();
+                                i = selecionaPaciente(pacientes);
+                                paciente1 = pacientes.get(i);
+                                sintomas = new ArrayList();
+                                texto = "";
+                                while(!"sair".equals(texto)){
+                                    System.out.println("Cirurgia (Digite 'sair' para sair): ");
+                                    texto = leitor.nextLine();
+                                    if(!"sair".equals(texto)){
+                                        sintomas.add(texto);
+                                    }
+                                }
+                                System.out.println("Diagnostico: ");
+                                diagnostico = leitor.nextLine();
+                                System.out.println("Prescricao: ");
+                                prescricao = leitor.nextLine();
+                                medico1.atualizarProntuario(paciente1, sintomas, diagnostico, prescricao);
                                 break;
                             case 6:
-                                medico1.removerProntuario(prontuario, paciente1);
+                                leitor.nextLine();
+                                i = selecionaPaciente(pacientes);
+                                paciente1 = pacientes.get(i);
+                                medico1.removerProntuario(paciente1);
                                 break;
                             case 7:
+                                leitor.nextLine();
                                 while(opcao5 != 0){
                                     System.out.println("*****RELATÓRIOS MÉDICOS*****");
                                     System.out.println("1. Receita");
@@ -295,26 +382,53 @@ public class Clinica {
                                     
                                     switch (opcao5) {
                                         case 1:
+                                            leitor.nextLine();
+                                            i = selecionaPaciente(pacientes);
+                                            paciente1 = pacientes.get(i);
                                             System.out.println("Escreva a receita médica: ");
-                                            receitaMedica = leitor.next();
-                                            receita.receitaMedica(paciente1, receitaMedica);
+                                            receitaMedica = leitor.nextLine();
+                                            receita = new Receita(paciente1, receitaMedica);
+                                            paciente1.setReceita(receita);
                                             System.out.println(receita.gerarRelatorio());
                                             break;
                                         case 2:
+                                            leitor.nextLine();
+                                            i = selecionaPaciente(pacientes);
+                                            paciente1 = pacientes.get(i);
+                                            i = 0;
+                                            System.out.println("Selecione um médico");
+                                            for (Iterator iterator = medicos.iterator(); iterator.hasNext(); i++) {
+                                                medico1 = (Medico) iterator.next();
+                                                System.out.println(i+". " +medico1.getNome());
+                                            }
+                                            i = leitor.nextInt();
+                                            medico1 = medicos.get(i);
                                             System.out.println("Dias de atestado: ");
                                             diasAtestado = leitor.nextInt();
-                                            atestado.setMedico(medico1);
-                                            atestado.atestadoMedico(paciente1, 3);
+                                            atestado = new Atestado(paciente1, 3, medico1);
+                                            paciente1.setAtestado(atestado);
                                             System.out.println(atestado.gerarRelatorio());
                                             break;
                                         case 3:
+                                            leitor.nextLine();
+                                            i = selecionaPaciente(pacientes);
+                                            paciente1 = pacientes.get(i);
+                                            i = 0;
+                                            System.out.println("Selecione um médico");
+                                            for (Iterator iterator = medicos.iterator(); iterator.hasNext(); i++) {
+                                                medico1 = (Medico) iterator.next();
+                                                System.out.println(i+". " +medico1.getNome());
+                                            }
+                                            i = leitor.nextInt();
+                                            medico1 = medicos.get(i);
                                             System.out.println("Nome do acompanhante: ");
-                                            nomeAcompanhante = leitor.next();
-                                            declaracao.declaracaoAcompanhante(paciente1);
-                                            declaracao.setMedico(medico1);
-                                            System.out.println(declaracao.gerarRelatorio(nomeAcompanhante));
+                                            nomeAcompanhante = leitor.nextLine();
+                                            declaracao = new DeclaracaoAcompanhamento(paciente1, nomeAcompanhante, medico1);
+                                            paciente1.setDeclaracaoAcompanhamento(declaracao);
+                                            System.out.println(declaracao.gerarRelatorio());
                                             break;
                                         case 4:
+                                            leitor.nextLine();
                                             System.out.println(clientesAtendidos.gerarRelatorio(consultas));
                                             break;
                                         case 0:
@@ -343,10 +457,16 @@ public class Clinica {
                     
                         switch (opcao4) {
                             case 1:
-                                System.out.println(gerenciadorMensagem.enviarEmail(paciente1));
+                                for (Iterator iterator = pacientes.iterator(); iterator.hasNext();) {
+                                    paciente1 = (Paciente) iterator.next();
+                                    System.out.println(gerenciadorMensagem.enviarEmail(paciente1));
+                                }
                                 break;
                             case 2:
-                                System.out.println(gerenciadorMensagem.enviarSMS(paciente1));
+                                for (Iterator iterator = pacientes.iterator(); iterator.hasNext();) {
+                                    paciente1 = (Paciente) iterator.next();
+                                    System.out.println(gerenciadorMensagem.enviarSMS(paciente1));
+                                }
                                 break;
                             case 0:
                                 break;
@@ -366,16 +486,18 @@ public class Clinica {
     }
     
     public static int selecionaPaciente(ArrayList<Paciente> pacientes){
-    System.out.println("Selecione um paciente");
-    int i = 0;
-    Scanner leitor = new Scanner(System.in);
-    Paciente paciente = new Paciente();
-    
-    for (Iterator iterator = pacientes.iterator(); iterator.hasNext(); i++) {
-        paciente = (Paciente) iterator.next();
-        System.out.println(i+". " +paciente.getNome());
-    }
-    return leitor.nextInt();
+        System.out.println("Selecione um paciente");
+        int i = 0;
+        Scanner leitor = new Scanner(System.in);
+        Paciente paciente = new Paciente();
+
+        for (Iterator iterator = pacientes.iterator(); iterator.hasNext(); i++) {
+            paciente = (Paciente) iterator.next();
+            System.out.println(i+". " +paciente.getNome());
+        }
+        i = leitor.nextInt();
+        leitor.nextLine();
+    return i;
 }
 
 }

@@ -16,11 +16,10 @@ public class Receita extends RelatorioMedico {
 
     }
 
-    public void receitaMedica(Paciente paciente, String receita) {
+    public Receita(Paciente paciente, String receita) {
         super.medico = medico;
         this.paciente = paciente;
         this.receita = receita;
-        
     }
 
     public void setMedico(Medico medico) {
@@ -32,7 +31,7 @@ public class Receita extends RelatorioMedico {
     }
 
     public String gerarRelatorio() {
-        return "Receita médica: "+ this.receita +".";
+        return "Receita médica de "+this.paciente.getNome()+": "+ this.receita +".";
     }
 
 }

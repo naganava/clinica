@@ -11,6 +11,7 @@ import relatorios.Prontuario;
 public class Medico extends Pessoa{
     
     ArrayList<Consulta> consultas = new ArrayList();
+    Prontuario prontuario = new Prontuario();
     
     public Medico(){
         
@@ -65,18 +66,18 @@ public class Medico extends Pessoa{
         return paciente;
     }
     
-    public void cadastrarProntuario(Prontuario prontuario,Paciente paciente,ArrayList<String> sintomas, String diagnostico, String prescricao){
-        prontuario.cadastrarProntuario(sintomas, diagnostico, prescricao);
+    public void cadastrarProntuario(Paciente paciente,ArrayList<String> sintomas, String diagnostico, String prescricao){
+        this.prontuario = new Prontuario(sintomas, diagnostico, prescricao);
         paciente.setProntuario(prontuario);
     }
     
-    public void atualizarProntuario(Prontuario prontuario,Paciente paciente,ArrayList<String> sintomas, String diagnostico, String prescricao){
-        prontuario.atualizarProntuario(sintomas, diagnostico, prescricao);
+    public void atualizarProntuario(Paciente paciente,ArrayList<String> sintomas, String diagnostico, String prescricao){
+        this.prontuario.atualizarProntuario(sintomas, diagnostico, prescricao);
         paciente.setProntuario(prontuario);
     }
     
-    public void removerProntuario(Prontuario prontuario,Paciente paciente){
-        prontuario.removerProntuario();
+    public void removerProntuario(Paciente paciente){
+        this.prontuario.removerProntuario();
         paciente.setProntuario(prontuario);
     }
   

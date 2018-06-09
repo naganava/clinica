@@ -20,14 +20,16 @@ public class Prontuario {
         
     }
     
-    public void cadastrarProntuario(ArrayList<String> sintomas, String diagnostico, String prescricao){
+    public Prontuario(ArrayList<String> sintomas, String diagnostico, String prescricao){
         this.diagnostico = diagnostico;
         this.prescricao = prescricao;
         this.sintomas = sintomas;
     }
     
     public void atualizarProntuario(ArrayList<String> sintomas, String diagnostico, String prescricao){
-        cadastrarProntuario(sintomas, diagnostico, prescricao);
+        this.diagnostico = diagnostico;
+        this.prescricao = prescricao;
+        this.sintomas = sintomas;
     }
     
     public void removerProntuario(){

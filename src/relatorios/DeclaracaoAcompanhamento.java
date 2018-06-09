@@ -10,21 +10,24 @@ import pessoas.Paciente;
 public class DeclaracaoAcompanhamento extends RelatorioMedico {
 
     private Paciente paciente;
+    private String acompanhante;
     
     public DeclaracaoAcompanhamento(){
         
     }
-    public void declaracaoAcompanhante(Paciente paciente){
+    public DeclaracaoAcompanhamento(Paciente paciente, String acompanhante, Medico medico){
         super.medico = medico;
         this.paciente = paciente;
+        this.acompanhante = acompanhante;
     }
     public void setMedico(Medico medico) {
         super.medico = medico;
     }
 
-    public String gerarRelatorio(String acompanhante) {
+    @Override
+    public String gerarRelatorio() {
         return "Eu, " + super.medico.getNome() + " declaro que o(a) " + paciente.getNome() 
-                + " paciente está acompanhado de " +acompanhante+". ";
+                + " paciente está acompanhado de " +this.acompanhante+". ";
     }
 
 }

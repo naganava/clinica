@@ -3,6 +3,7 @@ package pessoas;
 import java.util.ArrayList;
 import relatorios.Atestado;
 import relatorios.Consulta;
+import relatorios.DeclaracaoAcompanhamento;
 import relatorios.Prontuario;
 import relatorios.Receita;
 
@@ -26,6 +27,7 @@ public class Paciente extends Pessoa{
     private Atestado atestado;
     private Receita receita;
     private Consulta consulta;
+    private DeclaracaoAcompanhamento declaracaoAcompanhamento;
     
     public Paciente(){
         
@@ -130,6 +132,10 @@ public class Paciente extends Pessoa{
     
     public void setConsulta(Consulta consulta) {
         this.consulta = consulta;
+    }
+    
+    public void setDeclaracaoAcompanhamento(DeclaracaoAcompanhamento declaracao) {
+        this.declaracaoAcompanhamento = declaracao;
     }
     
     

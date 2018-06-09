@@ -13,7 +13,7 @@ public class RelatorioConsultas extends Relatorio {
         String relatorio = "";
         for (Iterator iterator = consultas.iterator(); iterator.hasNext(); ) {
             Consulta consulta = (Consulta) iterator.next();
-            if (consulta.getData() == dataRelatorio){
+            if (consulta.getData().equals(dataRelatorio)){
                 relatorio += consulta.getMedico().getNome()+" tem consulta marcada com "+consulta.getPaciente().getNome()+
                         " as "+consulta.getHorario() +" de "+ consulta.getData()+ System.getProperty("line.separator");
             }

@@ -16,7 +16,7 @@ public class Atestado extends RelatorioMedico {
 
     }
 
-    public void atestadoMedico(Paciente paciente, int diasAtestado) {
+    public Atestado(Paciente paciente, int diasAtestado, Medico medico) {
         super.medico = medico;
         this.diasAtestado = diasAtestado;
         this.paciente = paciente;
